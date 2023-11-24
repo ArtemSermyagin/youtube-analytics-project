@@ -1,12 +1,15 @@
+import os
 
+
+api_key: str = "AIzaSyAKvaVPp95lAYmDjFfAJWsE0N5SBdrljMk"
 
 class Channel:
     """Класс для ютуб-канала"""
 
     def __init__(self, channel_id: str) -> None:
         """Экземпляр инициализируется id канала. Дальше все данные будут подтягиваться по API."""
-        pass
+        self.channel_id = channel_id
 
     def print_info(self) -> None:
         """Выводит в консоль информацию о канале."""
-        pass
+        print(self.channel_id)
