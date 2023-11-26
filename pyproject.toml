@@ -1,0 +1,26 @@
+[tool.poetry]
+name = "youtube-analytics-project"
+version = "0.1.0"
+description = ""
+authors = ["ArtemSermyagin <artem.sermyagin@yahoo.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+requests = "^2.31.0"
+isodate = "^0.6.1"
+google-api-python-client = "^2.108.0"
+env = "^0.1.0"
+python-dotenv = "^1.0.0"
+flake8 = "^6.1.0"
+black = "^23.11.0"
+mypy = "^1.7.1"
+pytest = "^7.4.3"
+
+
+[tool.poetry.group.dev.dependencies]
+pytest-cov = "^4.1.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
