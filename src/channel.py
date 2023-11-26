@@ -23,6 +23,7 @@ class Channel:
         # print(channel)
         self.title = channel["items"][0]["snippet"]["title"]
         self.description = channel["items"][0]["snippet"]["description"]
+        # print(self.description)
         self.url = "https://www.youtube.com/channel/" + self.__channel_id
         self.subscriberCount = channel["items"][0]["statistics"]["subscriberCount"]
         self.video_count = channel["items"][0]["statistics"]["videoCount"]
@@ -31,7 +32,7 @@ class Channel:
     def print_info(self) -> None:
         """Выводит в консоль информацию о канале."""
         print(
-            f"""{self.__channel_id} - id канала, 
+            f"""{self.__channel_id} - id канала,
 {self.title} - название канала,
 {self.description} - описание канала,
 {self.url} - ссылка на канал,
