@@ -1,4 +1,3 @@
-import os
 from googleapiclient.discovery import build
 
 api_key: str = "AIzaSyAKvaVPp95lAYmDjFfAJWsE0N5SBdrljMk"
