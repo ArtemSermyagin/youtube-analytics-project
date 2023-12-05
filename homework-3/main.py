@@ -6,9 +6,7 @@ if __name__ == "__main__":
     highload = Channel("UCwHL6WHUarjGfUM_586me8w")
 
     # Используем различные магические методы
-    print(
-        moscowpython
-    )  # 'MoscowPython (https://www.youtube.com/channel/UC-OVMPlMA3-YCIeg4z5z23A)'
+    print(moscowpython)  # 'MoscowPython (https://www.youtube.com/channel/UC-OVMPlMA3-YCIeg4z5z23A)'
     print(moscowpython + highload)  # 100100
     print(moscowpython - highload)  # -48300
     print(highload - moscowpython)  # 48300

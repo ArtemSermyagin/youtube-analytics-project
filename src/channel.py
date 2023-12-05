@@ -1,6 +1,6 @@
 import json
 import os
-from googleapiclient.discovery import build
+from googleapiclient.discovery import build # type: ignore
 import dotenv
 
 dotenv.load_dotenv()
@@ -9,7 +9,7 @@ dotenv.load_dotenv()
 class Channel:
     """Класс для ютуб-канала"""
 
-    api_key: str = os.environ.get("YT_API_KEY")
+    api_key: str | None = os.environ.get("YT_API_KEY")
 
     def __init__(self, channel_id: str) -> None:
         """Экземпляр инициализируется id канала. Дальше все данные будут подтягиваться по API."""
@@ -48,3 +48,30 @@ class Channel:
     def to_json(self, file_name):
         with open(file_name, "w") as f:
             json.dump(self.__dict__, f, indent=4, ensure_ascii=False)
+
+    def __str__(self) -> str:
+        """Возвращает строковое представление канала."""
+        return f"{self.title} ({self.url})"
+
+    def __add__(self, other) -> int:
+        """Возвращает сумму подписчиков двух каналов."""
+        return int(self.subscriberCount) + int(other.subscriberCount)
+
+    def __sub__(self, other) -> int:
+        """Возвращает разность подписчиков двух каналов."""
+        return int(self.subscriberCount) - int(other.subscriberCount)
+
+    def __lt__(self, other) -> bool:
+        """Возвращает True, если количество подписчиков
+        текущего канала меньше, чем у другого."""
+        return self.subscriberCount < other.subscriberCount
+
+    def __le__(self, other) -> bool:
+        """Возвращает True, если количество подписчиков
+        текущего канала меньше или равно, чем у другого."""
+        return self.subscriberCount <= other.subscriberCount
+
+    def __eq__(self, other) -> bool:
+        """Возвращает True, если количество подписчиков
+        у двух каналов одинаково."""
+        return self.subscriberCount == other.subscriberCount

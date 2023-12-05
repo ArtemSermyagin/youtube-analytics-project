@@ -12,15 +12,12 @@ class TestChannel:
 
     def test_channel_info(self, channel):
         assert channel.title == "MoscowPython"
-        assert (
-            channel.description
-            == """Видеозаписи со встреч питонистов и джангистов в Москве и не только. :)
-            \nПрисоединяйтесь: https://www.facebook.com/groups/MoscowDjango! :)"""
-        )
+        assert channel.description == """Видеозаписи со встреч питонистов и джангистов в Москве и не только. :)
+Присоединяйтесь: https://www.facebook.com/groups/MoscowDjango! :)"""
         assert channel.url == "https://www.youtube.com/channel/UC-OVMPlMA3-YCIeg4z5z23A"
         assert channel.subscriberCount == "26800"
-        assert channel.video_count == "721"
-        assert channel.viewCount == "2465348"
+        assert channel.video_count == "726"
+        assert channel.viewCount == "2472920"
 
 
 def load_json_file(file_path):
