@@ -18,7 +18,6 @@ class PlayList:
         self.__id = playlist_id
         self.playlist = self.get_service().playlists().list(id=self.__id, part='snippet', maxResults=50).execute()
         self.title = self.playlist.get('items')[0]['snippet']['title']
-        self.url = f'https://www.youtube.com/playlist?list=/{self.__id}'
         self.info_videos = self.get_service().playlistItems().list(playlistId=self.__id,
                                                                    part='contentDetails, snippet',
                                                                    maxResults=50).execute()
