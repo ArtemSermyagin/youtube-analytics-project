@@ -26,4 +26,3 @@ class PLVideo(Video):
         youtube = self.get_service()
         self.play_list_id = (youtube.playlistItems().list(playlistId=play_list_id, part='contentDetails',
                                                           maxResults=50).execute())
-

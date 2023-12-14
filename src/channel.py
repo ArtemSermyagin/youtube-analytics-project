@@ -78,14 +78,14 @@ class Channel:
         return self.subscriberCount == other.subscriberCount
 
 
-video_id = "AWX4JnAnjBE"
-api_key = "AIzaSyAKvaVPp95lAYmDjFfAJWsE0N5SBdrljMk"
-
-youtube = build("youtube", "v3", developerKey=api_key)
-
-video_response = (
-    youtube.videos()
-    .list(part="snippet,statistics,contentDetails,topicDetails", id=video_id)
-    .execute()
-)
-print(video_response)
+# video_id = "AWX4JnAnjBE"
+# api_key = "AIzaSyAKvaVPp95lAYmDjFfAJWsE0N5SBdrljMk"
+#
+# youtube = build("youtube", "v3", developerKey=api_key)
+#
+# video_response = (
+#     youtube.videos()
+#     .list(part="snippet,statistics,contentDetails,topicDetails", id=video_id)
+#     .execute()
+# )
+# print(video_response)
